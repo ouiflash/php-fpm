@@ -36,6 +36,7 @@ RUN docker-php-ext-configure intl \
     --with-libzip
 
 RUN docker-php-ext-install \
+    bcmath \
     exif \
     gd \
     intl \
