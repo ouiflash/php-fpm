@@ -48,3 +48,4 @@ RUN docker-php-ext-enable \
 
 RUN curl -s http://getcomposer.org/installer | \
     php -- --install-dir=/usr/local/bin --filename=composer --quiet
+
