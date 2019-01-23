@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.3-fpm
 
 MAINTAINER Remi FUSSIEN <remi.fussien@gmail.com>
 
@@ -24,7 +24,6 @@ RUN apt-get update \
   && pecl install -o -f \
     imagick \
     redis \
-    xdebug \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /tmp/pear
 
@@ -45,8 +44,7 @@ RUN docker-php-ext-install \
     zip
 
 RUN docker-php-ext-enable \
-    imagick \
-    xdebug
+    imagick
 
 RUN curl -s http://getcomposer.org/installer | \
     php -- --install-dir=/usr/local/bin --filename=composer --quiet
