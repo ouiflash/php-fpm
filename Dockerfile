@@ -20,6 +20,7 @@ RUN apt-get update \
     libzip-dev \
     libmagickwand-dev \
     imagemagick \
+    supervisor \
     unzip \
     zlib1g-dev \
   && pecl install -o -f \
