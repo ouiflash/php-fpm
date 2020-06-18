@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:7.4-fpm
 
 MAINTAINER Remi FUSSIEN <remi.fussien@gmail.com>
 
@@ -30,11 +30,8 @@ RUN apt-get update \
   && rm -rf /tmp/pear
 
 RUN docker-php-ext-configure intl \
-  && docker-php-ext-configure gd \
-    --with-jpeg-dir=/usr/lib \
-    --with-freetype-dir=/usr/include/freetype2 \
-  && docker-php-ext-configure zip \
-    --with-libzip
+  && docker-php-ext-configure gd --with-jpeg --with-freetype \
+  && docker-php-ext-configure zip --with-zip
 
 RUN docker-php-ext-install \
     bcmath \
